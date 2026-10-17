@@ -1,36 +1,47 @@
-# my-app
+# Invenstory
 
-A minimal next app with Prisma 8 and Prisma Composer.
+Marketing site and login UI for Invenstory, built with Next.js 16, Tailwind CSS v4
+and shadcn/ui.
+
+This is frontend only — there is no authentication or form backend. The login and
+contact forms validate locally and then state that nothing was sent.
 
 ## Run locally
+
+```bash
+bun install
+bun run dev
+```
+
+Open http://localhost:3000.
+
+## Routes
+
+- `/` — landing page (hero, about, quote, pricing, contact, footer)
+- `/login` — sign-in screen
+
+## Structure
+
+- `src/app` — routes, layout, theme tokens (`globals.css`)
+- `components` — landing sections and shadcn primitives (`components/ui`)
+- `lib/utils.ts` — `cn` helper
+
+Brand tokens (`primary`, `border`, `muted`, custom `brand`/`ink`/`cyan` colors)
+live in `src/app/globals.css`.
+
+## Prisma scaffold
+
+The repository still contains the Prisma 8 / Composer starter files
+(`src/prisma`, `module.ts`, `service.ts`), but the pages do not use them.
 
 ```bash
 bun run dev:composer
 ```
 
-This builds the app and starts it with Composer. PostgreSQL projects get a local Prisma Postgres database and apply the committed migrations automatically.
-
-## Deploy
+## Build
 
 ```bash
-bun run deploy
+bun run build
+bun run start
 ```
-
-The deploy script builds the framework output, provisions Prisma Postgres when selected, applies migrations, and deploys the app to Prisma Compute.
-
-The starter users are inserted idempotently from `src/prisma/seed.ts` on the first database query through the Composer service binding.
-
-
-## Prisma
-
-- Contract: `src/prisma/contract.ts`
-- Prisma and Composer config: `prisma.config.ts`
-- Composer app: `module.ts` and `service.ts`
-
-After changing the contract, run:
-
-```bash
-bun run contract:emit
-```
-
-To use the framework's development server directly, run `bun run dev`. This direct mode requires `DATABASE_URL`.
+# test-KeDa-Tech
