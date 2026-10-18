@@ -1,0 +1,12 @@
+{
+  "name": "keda-tech-test-soal1",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jawaban Soal Test 1: sort manual, maksimum subarray, jumlah bilangan genap pada nested object",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
